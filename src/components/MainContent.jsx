@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function MainContent() {
-  const state = { pageTitle: 'Customers', customerCount: 5 };
-  const onRefeshClick = () => {
-    console.log('Refresh clicked');
+  const [state, setState] = useState({ pageTitle: 'Customers', customerCount: 5 });
+  const onRefreshClick = () => {
+    setState({ pageTitle: 'Customers', customerCount: 10 });
   };
   return (
     <div>
@@ -15,7 +15,7 @@ function MainContent() {
             state.customerCount
 }
           </span>
-          <button className="btn btn-info" onClick={onRefeshClick} type="submit">Refresh</button>
+          <button className="btn btn-info" onClick={onRefreshClick} type="submit">Refresh</button>
         </h4>
       </main>
     </div>
